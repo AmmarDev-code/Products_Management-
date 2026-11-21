@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1c1c24">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Product Management System</title>
+    <link rel="stylesheet" href="new.css">
+</head>
+<body>
+
+    <div class="project">
+        <div class="head">
+            <h2>MY PROJECT</h2>
+            <p>PRODUCT MANAGEMENT SYSTEM</p>
+        </div>
+
+        <div class="inputs">
+            <input type="text" id="title" placeholder="title" autocomplete="off">
+            <div class="price">
+                <input onkeyup="getTotal()" type="number" inputmode="decimal" id="price" placeholder="price">
+                <input onkeyup="getTotal()" type="number" inputmode="decimal" id="taxes" placeholder="taxes">
+                <input onkeyup="getTotal()" type="number" inputmode="decimal" id="ads" placeholder="ads">
+                <input onkeyup="getTotal()" type="number" inputmode="decimal" id="discount" placeholder="discount">
+                <small id="total"></small>
+            </div>
+            <input type="number" inputmode="numeric" id="count" placeholder="count">
+            <input type="text" id="category" placeholder="category" autocomplete="off">
+            <button id="submit">Create</button>
+        </div>
+
+        <div class="outputs">
+            <div class="searchblock">
+                <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="search" autocomplete="off">
+            </div>
+            <div class="btnsearch">
+                <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+                <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Category</button>
+            </div>
+
+            <div id="delete"></div>
+
+            <div class="table-scroll-hint">
+                <span>⟵ Scroll table horizontally to view all columns ⟶</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>price</th>
+                            <th>taxes</th>
+                            <th>ads</th>
+                            <th>discount</th>
+                            <th>total</th>
+                            <th>category</th>
+                            <th>update</th>
+                            <th>delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Scroll To Top Button for Mobile -->
+    <button id="scrollTopBtn" title="Scroll To Top" onclick="scrollToTop()">↑</button>
+
+    <script src="first.js"></script>
+</body>
+</html>

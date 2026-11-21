@@ -1,0 +1,444 @@
+/* ==========================================================
+   CSS RESET & MODERN BOX SIZING
+   ========================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background: #1c1c24;
+    color: #f1f1f1;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* ==========================================================
+   MAIN CONTAINER (RESPONSIVE)
+   ========================================================== */
+.project {
+    width: 92%;
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 24px;
+    background: #242430;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================
+   HEADER SECTION
+   ========================================================== */
+.head {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.head h2 {
+    font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffffff 30%, #b388ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.head p {
+    font-size: clamp(0.75rem, 2vw, 0.95rem);
+    letter-spacing: 2px;
+    color: #9e9eb3;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* ==========================================================
+   INPUTS SECTION
+   ========================================================== */
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input {
+    width: 100%;
+    height: 44px;
+    outline: none;
+    border: 1px solid #36364a;
+    background: #191922;
+    border-radius: 8px;
+    padding: 0 14px;
+    color: #ffffff;
+    font-size: 16px; /* Prevents auto-zoom on iOS Safari */
+    transition: all 0.25s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input::placeholder {
+    color: #7b7b93;
+    text-transform: capitalize;
+}
+
+input:focus {
+    background: #14141c;
+    border-color: #7c4dff;
+    box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.25);
+}
+
+/* ==========================================================
+   PRICE ROW & TOTAL BADGE
+   ========================================================== */
+.price {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.price input {
+    flex: 1 1 18%;
+    min-width: 110px;
+    margin: 0;
+}
+
+#total {
+    background-color: #b71c1c;
+    color: #ffffff;
+    height: 44px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    min-width: 110px;
+    transition: background-color 0.3s ease;
+    flex: 1 1 auto;
+}
+
+#total::before {
+    content: 'Total: ';
+    margin-right: 5px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+button {
+    width: 100%;
+    height: 44px;
+    border: none;
+    cursor: pointer;
+    background: #5e35b1;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+    touch-action: manipulation;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+button:hover {
+    background-color: #7e57c2;
+    box-shadow: 0 4px 12px rgba(126, 87, 194, 0.35);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#submit {
+    margin-top: 4px;
+    background: linear-gradient(135deg, #6200ea, #7c4dff);
+    font-weight: 700;
+}
+
+#submit:hover {
+    background: linear-gradient(135deg, #7c4dff, #6200ea);
+}
+
+/* ==========================================================
+   OUTPUTS & SEARCH
+   ========================================================== */
+.outputs {
+    margin-top: 25px;
+}
+
+.searchblock {
+    margin-bottom: 8px;
+}
+
+.btnsearch {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.btnsearch button {
+    flex: 1;
+    background: #3949ab;
+}
+
+.btnsearch button:hover {
+    background: #5c6bc0;
+}
+
+#delete {
+    margin: 12px 0;
+}
+
+#delete button {
+    background: #c2185b;
+}
+
+#delete button:hover {
+    background: #e91e63;
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.35);
+}
+
+/* ==========================================================
+   RESPONSIVE TABLE & SCROLL CONTAINER
+   ========================================================== */
+.table-scroll-hint {
+    display: none;
+    font-size: 12px;
+    color: #9e9eb3;
+    text-align: center;
+    margin: 12px 0 6px;
+    user-select: none;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    border: 1px solid #36364a;
+    background: #191922;
+    margin-top: 10px;
+}
+
+/* Custom Scrollbar for Table */
+.table-container::-webkit-scrollbar {
+    height: 8px;
+}
+.table-container::-webkit-scrollbar-track {
+    background: #191922;
+    border-radius: 10px;
+}
+.table-container::-webkit-scrollbar-thumb {
+    background: #5e35b1;
+    border-radius: 10px;
+}
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #7e57c2;
+}
+
+table {
+    width: 100%;
+    min-width: 750px; /* Protects columns from crushing on mobile */
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table th {
+    background: #2a2a3c;
+    color: #d1c4e9;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 12px 10px;
+    border-bottom: 2px solid #36364a;
+    white-space: nowrap;
+}
+
+table td {
+    padding: 10px 8px;
+    font-size: 14px;
+    border-bottom: 1px solid #2d2d3e;
+    color: #e0e0e0;
+    white-space: nowrap;
+}
+
+table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+table tbody tr:hover {
+    background-color: rgba(124, 77, 255, 0.1);
+}
+
+/* Action Buttons inside Table */
+.btn-table {
+    width: auto;
+    min-width: 65px;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 2px;
+}
+
+.btn-update, #update {
+    background: #00897b;
+}
+
+.btn-update:hover, #update:hover {
+    background: #26a69a;
+    box-shadow: 0 2px 8px rgba(38, 166, 154, 0.4);
+}
+
+.btn-delete, #deleteBtn {
+    background: #d32f2f;
+}
+
+.btn-delete:hover, #deleteBtn:hover {
+    background: #f44336;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.4);
+}
+
+/* ==========================================================
+   FLOATING SCROLL TO TOP BUTTON (MOBILE UX)
+   ========================================================== */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #7c4dff;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+#scrollTopBtn:hover {
+    background: #651fff;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================
+   MEDIA QUERIES (RESPONSIVE BREAKPOINTS)
+   ========================================================== */
+
+/* Tablets & Small Laptops (max-width: 992px) */
+@media (max-width: 992px) {
+    .project {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+/* Phablets & Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .project {
+        width: 96%;
+        margin: 12px auto;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .table-scroll-hint {
+        display: block;
+    }
+
+    .price {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .price input {
+        flex: none;
+        width: 100%;
+    }
+
+    #total {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin-top: 4px;
+    }
+}
+
+/* Standard Mobile Phones (Android, iPhone) (max-width: 480px) */
+@media (max-width: 480px) {
+    .project {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 16px 12px;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    body {
+        background: #1c1c24;
+    }
+
+    .head {
+        margin-bottom: 20px;
+    }
+
+    .btnsearch {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btnsearch button {
+        width: 100%;
+    }
+
+    #scrollTopBtn {
+        bottom: 18px;
+        right: 18px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+/* Extra Small Phones (iPhone SE 1st gen, Fold outer screens < 360px) */
+@media (max-width: 360px) {
+    .price {
+        grid-template-columns: 1fr;
+    }
+
+    input, button, #total {
+        height: 42px;
+        font-size: 14px;
+    }
+}
